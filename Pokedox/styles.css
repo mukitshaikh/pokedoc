@@ -1,0 +1,213 @@
+body, html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #eaeaea;
+}
+
+.center-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.android-frame {
+    width: 350px;
+    height: 650px;
+    border: 16px solid #333;
+    border-radius: 40px;
+    background-color: #f3f3f3;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.screen {
+    width: 90%;
+    height: 90%;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* Pokedex Header Styling */
+.pokedex-header {
+    display: flex;
+    align-items: center; /* Vertically align items (logo and title) */
+    justify-content: center; /* Horizontally center the logo and title */
+    background-color: #ca3030;
+    color: yellow;
+    padding: 10px;
+    border-radius: 10px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* Logo Styling - Remove background, set position, and make it circular */
+.logo {
+    width: 30px; /* Increased size to make the circle look more proportionate */
+    height: 30px;
+    margin-right: 10px; /* Space between the logo and the title */
+    display: inline-block;
+    object-fit: contain; /* Keeps the logo in its aspect ratio */
+    border-radius: 50%; /* Makes the logo circular */
+    background-color: white; /* Optional: background color for the circle */
+    padding: 3px; /* Optional: add padding inside the circle */
+}
+
+
+/* Title Styling */
+.title {
+    font-size: 24px;
+    margin: 0;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.search-bar {
+    flex: 1;
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: 2px solid #ccc; /* Adds a light gray border */
+    outline: none;
+    background-color: white;
+    transition: border-color 0.3s ease; /* Smooth transition for border color change on focus */
+}
+
+.search-bar:focus {
+    border-color: #020202; /* Highlighted border color when focused */
+}
+
+
+.hashtag-button {
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    color: #000;
+    cursor: pointer;
+    margin-left: 5px;
+}
+
+.pokedex-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pokemon-card {
+    position: relative;
+    text-align: center;
+    transition: transform 0.2s;
+    overflow: hidden;
+    border-radius: 12px; /* Curved edges */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pokemon-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.pokemon-card:hover img {
+    transform: scale(1.1);
+}
+
+.sort-popup {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.pokemon-details {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, seagreen 35%, #ffffff 25%); /* Gradient: seagreen at top 25%, white below */
+    padding: 20px;
+    box-sizing: border-box;
+    overflow-y: auto;
+    border-radius: 20px;
+    z-index: 10;
+}
+
+
+.pokemon-details img {
+    width: 32%;
+    border-radius: 12px; /* Curved edges for the modal image */
+}
+
+.pokemon-info {
+    text-align: center;
+}
+
+.types {
+    margin-top: 10px;
+}
+
+.type {
+    background-color: #4CAF50;
+    color: white;
+    padding: 3px 10px;
+    border-radius: 15px;
+    margin: 0 5px;
+}
+
+.about-section, .base-stats {
+    margin-top: 20px;
+}
+
+.back-button {
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 18px;
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+/* Stats Bar Styling */
+.base-stats .stat-bar {
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+}
+
+.base-stats .bar {
+    width: 100%;
+    background-color: #ddd;
+    height: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-left: 5px;
+}
+
+.base-stats .fill {
+    background-color: #4CAF50;
+    height: 100%;
+    width: 60%; /* Change dynamically */
+    transition: width 0.3s;
+}

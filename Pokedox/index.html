@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokedex in Android Frame</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="center-container">
+        <div class="android-frame">
+            <div class="screen">
+                <header class="pokedex-header">
+                    <img class="logo" src="img/logo.jpg" alt="Pokedex Logo">
+                    <h1 class="title">Pokedex</h1>
+                </header>
+                
+                <div class="search-container">
+                    <input type="text" class="search-bar" id="search-bar" placeholder="Search" oninput="searchPokemon()">
+                    <button class="hashtag-button" onclick="togglePopup()">#</button>
+                </div>
+                </header>
+
+                <!-- Sorting Popup -->
+                <div class="sort-popup" id="sort-popup">
+                    <label><input type="radio" name="sort" value="alphabetical" onclick="sortGallery('alphabetical')"> Alphabetical</label>
+                    <label><input type="radio" name="sort" value="name" onclick="sortGallery('name')"> Name</label>
+                </div>
+
+                <!-- Pokémon Gallery -->
+                <div class="pokedex-gallery" id="pokedex-gallery">
+                    <div class="pokemon-card" data-name="Bulbasaur" onclick="showPokemonDetails('Bulbasaur')">
+                        <img src="img/bulbasaur.jpg" alt="Bulbasaur">
+                        <p>Bulbasaur</p>
+                    </div>
+                    <div class="pokemon-card" data-name="Charmander" onclick="showPokemonDetails('Charmander')">
+                        <img src="img/charmander.jpg" alt="Charmander">
+                        <p>Charmander</p>
+                    </div>
+                    <div class="pokemon-card" data-name="Squirtle" onclick="showPokemonDetails('Squirtle')">
+                        <img src="img/squirtle.jpg" alt="Squirtle">
+                        <p>Squirtle</p>
+                    </div>
+                    <div class="pokemon-card" data-name="Pikachu" onclick="showPokemonDetails('Pikachu')">
+                        <img src="img/pikachu.png" alt="Pikachu">
+                        <p>Pikachu</p>
+                    </div>
+                </div>
+
+                <!-- Pokémon Details Modal within Android Frame -->
+                <div class="pokemon-details" id="pokemon-details">
+                    <button class="back-button" onclick="closePokemonDetails()">← Back</button>
+                    <div class="pokemon-info">
+                        <h2 id="pokemon-name">Bulbasaur</h2>
+                        <p id="pokemon-id">#001</p>
+                        <img src="img/bulbasaur.jpg" alt="Bulbasaur" id="pokemon-image">
+                        <div class="types">
+                            <span class="type">Grass</span>
+                            <span class="type">Poison</span>
+                        </div>
+                        <div class="about-section">
+                            <h3>About</h3>
+                            <p>Weight: <span id="pokemon-weight">6.9 kg</span></p>
+                            <p>Height: <span id="pokemon-height">0.7 m</span></p>
+                            <p>Moves: <span id="pokemon-moves">Tackle, Growl, Leech Seed</span></p>
+                        </div>
+                        
+                            <div class="base-stats">
+                                <h3>Base Stats</h3>
+                                <div class="stat-bar"><span>HP</span><div class="bar"><div id="pokemon-hp" class="fill"></div></div></div>
+                                <div class="stat-bar"><span>ATK</span><div class="bar"><div id="pokemon-atk" class="fill"></div></div></div>
+                                <div class="stat-bar"><span>DEF</span><div class="bar"><div id="pokemon-def" class="fill"></div></div></div>
+                                <div class="stat-bar"><span>SP.ATK</span><div class="bar"><div id="pokemon-satk" class="fill"></div></div></div>
+                                <div class="stat-bar"><span>SP.DEF</span><div class="bar"><div id="pokemon-sdef" class="fill"></div></div></div>
+                                <div class="stat-bar"><span>SPD</span><div class="bar"><div id="pokemon-spd" class="fill"></div></div></div>
+                            </div>
+                            <!-- More stats here... -->
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
